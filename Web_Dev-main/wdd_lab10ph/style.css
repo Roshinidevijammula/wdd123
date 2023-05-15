@@ -1,0 +1,17 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+.form{
+    border: 4px solid black;
+    display:flex;
+    justify-content: center;
+    margin:  0 34%;
+    font-size: 20px;
+    padding: 2%;
+}
+
+h1{
+    background-color: rgb(220, 145, 40);
+}

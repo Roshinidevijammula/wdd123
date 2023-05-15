@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD_Lab_5(b)</title>
+    <link rel="stylesheet" href="wdd_lab5.css">
+    <script type="text/javascript">
+        function solution(){
+        //     tabcontent = document.getElementsByClassName("main");
+        // for (i = 0; i < tabcontent.length; i++) {
+        //   tabcontent[i].style.display = "none";
+        // }
+            var name = document.s.name.value;
+            var emid = document.s.id.value;
+            var sal = parseInt(document.s.salary.value);
+
+            var hra = 0.4*sal;
+            var da = 0.6 * sal;
+            var gross = sal+hra+da;
+            var pf = 0.13*gross;
+            var tax = 0.2*gross;
+            var ded = pf+tax;
+            var net = gross-ded;
+
+            document.getElementById('Ename').innerText = name;
+            document.getElementById('Emid').innerText = emid;
+            document.getElementById('bs').innerText = sal;
+            document.getElementById('hra').innerText = hra;
+            document.getElementById('da').innerText = da;
+            document.getElementById('gs').innerText = gross;
+            document.getElementById('pf').innerText = pf;
+            document.getElementById('t').innerText = tax;
+            document.getElementById('d').innerText = ded;
+            document.getElementById('ns').innerText = net;
+
+        }
+    </script>
+</head>
+<body>
+    <div class="head">
+        <h1>Employee Salary Report</h1>
+    </div>
+    <div class="section">
+    <div class="main">
+        <h2 style="text-align:center ;">INPUT</h2><br>
+        <form name="s" >
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+            <br><br>
+            <label for="id">Employee Id</label>
+            <input type="text" name="id" id="id" required>
+            <br><br>
+            <label for="salary">Basic Salary</label>
+            <input type="text" name="salary" id="salary" required>
+            <br><br>
+            <button type="button" onclick="solution()">Calculate</button>
+        </form>
+    </div>
+    <br><br><br>
+    <div class="output">
+        <h2 style="text-align:center ;">Output</h2><br>
+        <table>
+            <thead>
+                <th style="text-align: center;">Employe Salary Report</th>
+            </thead>
+            <tr>
+                <td>Employee Name:</td>
+                <td id="Ename"></td>
+            </tr>
+            <tr>
+                <td>Employee id:</td>
+                <td id="Emid"></td>
+            </tr>
+            <tr>
+                <td>Basic Salary:</td>
+                <td id="bs"></td>
+            </tr>
+            <tr>
+                <td>HRA:</td>
+                <td id="hra"></td>
+            </tr>
+            <tr>
+                <td>DA:</td>
+                <td id="da"></td>
+            </tr>
+            <tr>
+                <td>Gross Salary:</td>
+                <td id="gs"></td>
+            </tr>
+            <tr>
+                <td>Pf:</td>
+                <td id="pf"></td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td id="t"></td>
+            </tr>
+            <tr>
+                <td>Deduction:</td>
+                <td id="d"></td>
+            </tr>
+            <tr>
+                <td>Net Salary:</td>
+                <td id="ns"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

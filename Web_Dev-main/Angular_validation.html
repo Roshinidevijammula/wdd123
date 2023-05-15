@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		.container {
+			max-width: 500px;
+			margin: auto;
+			ali
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #aaa;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 0px;
+			color: #333;
+		}
+		label {
+			display: block;
+			margin-bottom: 5px;
+			color: #666;
+		}
+		input[type="text"], input[type="email"], input[type="password"] {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px;
+			cursor: pointer;
+			width: 100%;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		.error {
+			color: red;
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script>
+		var app = angular.module('loginApp', []);
+		app.controller('loginCtrl', function($scope) {
+
+			
+			$scope.submit = function() {
+				if ($scope.loginForm.$valid) {
+					alert('Form submitted successfully.');
+				}
+			};
+		});
+	</script>
+</head>
+<body ng-app="loginApp" ng-controller="loginCtrl">
+	<div class="container">
+		<h1>Login</h1>
+		<form name="loginForm" ng-submit="submit()" novalidate>
+			<label for="name">Name*</label>
+			<input type="text" name="name" ng-model="name" ng-minlength="3" ng-maxlength="8" required>
+			<div ng-show="loginForm.name.$invalid && !loginForm.name.$pristine">
+				<span class="error" ng-show="loginForm.name.$error.required">Name is required.</span>
+				<span class="error" ng-show="loginForm.name.$error.minlength">Name must be at least 3 characters.</span>
+				<span class="error" ng-show="loginForm.name.$error.maxlength">Name cannot be more than 8 characters.</span>
+			</div>
+
+			<label for="email">Email*</label>
+			<input type="email" name="email" ng-model="email" required>
+			<div ng-show="loginForm.email.$invalid && !loginForm.email.$pristine">
+				<span class="error" ng-show="loginForm.email.$error.required">Email is required.</span>
+				<span class="error" ng-show="loginForm.email.$error.email">Invalid email address.</span>
+			</div>
+
+			<label for="password">Password*</label>
+			<input type="password" name="password" ng-model="password" ng-minlength="6" required>
+			<div ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">
+				<span class="error" ng-show="loginForm.password.$error.required">Password is required.</span>
+                <span class="error" ng-show="loginForm.password.$error.minlength">Password must be at least 6 characters.</span>
+			</div>
+
+			<input type="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>

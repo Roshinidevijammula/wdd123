@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Student Grade Form</title>
+  <style type="text/css">
+  		body{
+  			display:flex;
+  			flex-direction:column;
+  			align-items:center;
+  			padding: 10% 0;
+  			}
+  		form{
+  			border: 4px solid black;
+  			padding: 10px;
+  			margin: 0 35%;
+  			
+  			
+  		}
+  </style>
+</head>
+<body>
+  <h1>Student Grade Form</h1>
+  <form action="StudentGradeServlet" method="get">
+    <p>Enter marks for five subjects:</p>
+    <label for="mark1">Subject 1:</label>
+    <input type="text" id="mark1" name="mark1"><br>
+    <label for="mark2">Subject 2:</label>
+    <input type="text" id="mark2" name="mark2"><br>
+    <label for="mark3">Subject 3:</label>
+    <input type="text" id="mark3" name="mark3"><br>
+    <label for="mark4">Subject 4:</label>
+    <input type="text" id="mark4" name="mark4"><br>
+    <label for="mark5">Subject 5:</label>
+    <input type="text" id="mark5" name="mark5"><br>
+    <input type="submit" value="Get Grade">
+  </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.ajax({
+				url: "car.json",
+				dataType: "json",
+				success: function(data) {
+					var carDetails = "<p>Make: " + data.make + "</p>";
+					carDetails += "<p>Model: " + data.model + "</p>";
+					carDetails += "<p>Year: " + data.year + "</p>";
+					carDetails += "<p>Color: " + data.color + "</p>";
+					carDetails += "<p>Price: $" + data.price + "</p>";
+					$("#car-details").html(carDetails);
+				},
+				error: function() {
+					$("#car-details").html("Error: Unable to retrieve car details");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="car-details"></div>
+</body>
+</html>

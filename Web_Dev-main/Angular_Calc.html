@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="calculatorApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="WDD_week6A.js"></script>
+</head>
+<body ng-controller="calculatorController" style="display: flex; justify-content: center; flex-direction: column; padding: 5% 34%;">
+  <h1>Basic Calculator</h1>
+  <input type="number" placeholder="Enter number 1" id="num1" ng-model="num1">
+  <br><br>
+  <input type="number" placeholder="Enter number 2" id="num2" ng-model="num2">
+  <br><br>
+  <label for="operation">Operation:</label>
+  <select id="operation" ng-model="operation">
+    <option value="+">Addition</option>
+    <option value="-">Subtraction</option>
+    <option value="*">Multiplication</option>
+    <option value="/">Division</option>
+  </select>
+  <br><br>
+  <button ng-click="calculate()">Calculate</button>
+  <br><br>
+  <label for="result">Result:</label>
+  <input type="number" id="result" ng-model="result" readonly>
+</body>
+</html>

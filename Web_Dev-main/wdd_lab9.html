@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.ajax({
+				url: "message.txt",
+				dataType: "text",
+				success: function(data) {
+					$("#message-container").html(data);
+				},
+				error: function() {
+					$("#message-container").html("Error: Unable to retrieve message");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="message-container"></div>
+</body>
+</html>

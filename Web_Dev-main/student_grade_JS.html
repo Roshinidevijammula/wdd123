@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Student Grade Form</title>
+  <link rel="stylesheet" href="wdd_lab5.css">
+  <script type="text/javascript">
+        function grade(){
+            var s1 = parseInt(f.mark1.value);
+            var s2 = parseInt(f.mark2.value);
+            var s3 = parseInt(f.mark3.value);
+            var s4 = parseInt(f.mark4.value);
+            var s5 = parseInt(f.mark5.value);
+
+            var avg = (s1+s2+s3+s4+s5)/5;
+            var grade = "";
+             if(avg>=91)
+                grade = "A";
+            else if(avg>=71 && avg<91)
+                grade = "B";
+            else if(avg>=51 && avg<71)
+                grade = "C";
+            else if(avg>=41 && avg<51)
+                grade = "D";
+            else if(avg<41)
+                grade = "F";
+            else
+                grade = "Invalid Mark entry";
+            
+            document.getElementById('score').innerText = avg;
+            document.getElementById('gr').innerText = grade;
+                
+
+
+        }
+  </script>
+</head>
+<body>
+    <h1 class="head">Student Grade Form</h1>
+    <div class="section">
+    <div class="main">
+  
+  
+  <div class="form">
+  <form name ="f">
+    <p>Enter marks for five subjects:</p>
+    <label for="mark1">Subject 1:</label>
+    <input type="text" id="mark1" name="mark1"><br><br>
+    <label for="mark2">Subject 2:</label>
+    <input type="text" id="mark2" name="mark2"><br><br>
+    <label for="mark3">Subject 3:</label>
+    <input type="text" id="mark3" name="mark3"><br><br>
+    <label for="mark4">Subject 4:</label>
+    <input type="text" id="mark4" name="mark4"><br><br>
+    <label for="mark5">Subject 5:</label>
+    <input type="text" id="mark5" name="mark5"><br><br>
+    <button type="button" onclick="grade()">Get Grade</button>
+  </form></div></div>
+  <div class="output">
+    <table>
+        <thead>
+            <th style="text-align: center;">Student Report</th>
+        </thead>
+        <tr>
+            <td>Average Score:</td>
+            <td id="score"></td>
+        </tr>
+        <tr>
+            <td>Grade:</td>
+            <td id="gr"></td>
+        </tr>
+  </div></div>
+</body>
+</html>
